@@ -13,7 +13,8 @@ class PloysController < ApplicationController
 
   def update
     @ploy = Ploy.find(params[:id])
-
+    @ploy.agrees = params[:agrees]
+    binding.pry
     if @ploy.update(ploy_params)
       redirect_to @ploy
     else
@@ -42,8 +43,9 @@ class PloysController < ApplicationController
 private
 
   def ploy_params
-    params.require(:ploy).permit(:date, :num_of_people, :desired_num_of_people, :mostly_or_all, :desired_mostly_or_all,
-      :min_age, :max_age, :city, :state, :zipcode, :activity, :place_type, :preferred_place, :user_id, :wave_id)
+    params.require(:ploy).permit(:date, :num_of_people, :desired_num_of_people, :mostly_or_all, 
+      :desired_mostly_or_all, :min_age, :max_age, :city, :state, :zipcode, :activity, :place_type,
+      :preferred_place, :user_id, :wave_id, :agrees)
   end
 
 end

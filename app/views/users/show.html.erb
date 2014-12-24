@@ -1,9 +1,11 @@
 <h1> <%= @user.username %></h1>
-<h3> <%= @user.full_name %> </h3>
-<hr>
+<h3> <%= link_to 'Show Matches', user_matches_path(@user) %> </h3>
+
+<div class="ploy-container">
 <% @user.user_ploys(@user).map do |each_ploy| %>
+	<div class="ploy">
 	<h3>
-	<%= each_ploy.date %></br>
+	<%= each_ploy.date.strftime("%A %B %e %Y")  %></br>
 	<%= each_ploy.city %>,
 	<%= each_ploy.state %>
 	<%= each_ploy.zipcode %>
@@ -28,6 +30,8 @@
 		<%= act.to_s %>
 	<% end %>
 	</p>
-<hr>
+	</div>
+
 
 <% end %>
+</div>

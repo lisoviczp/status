@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 	has_many :ploys
-	has_many :waves, through: :ploys
+	# has_many :waves, through: :ploys
+
+	has_many :favorites
+	has_many :favorite_ploys, through: :favorites, source: :ploy
 
 	def full_name
 		"#{first_name} #{last_name}"

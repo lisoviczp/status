@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'ploys#index'
+
   # get 'waves/index'
 
   # get 'waves/show'
@@ -36,7 +37,11 @@ Rails.application.routes.draw do
   resources :ploys
   resources :waves
 
-  get 'users/:id/matches' => 'users#matches'
+
+  # get 'users/:id/favorites' => 'users#favorites', as: :favorite
+  get 'users/:id/favorite_ploy' => 'favorites#favorite_ploy', as: :favorites
+
+  get 'users/:id/matches' => 'users#matches', as: 'user_matches'
   # get 'tenants/:id/find' => 'tenants#find', as: 'tenants_find'
 
   # The priority is based upon order of creation: first created -> highest priority.

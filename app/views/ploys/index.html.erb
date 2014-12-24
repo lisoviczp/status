@@ -1,11 +1,19 @@
+<style>
+
+
+</style>
+
+
 <h1> Showing All Ploys </h1>
 
-<hr>
+<!-- <hr> -->
+<div class="ploy-container">
 <% @ploy.map do |each_ploy| %>
+	<div class="ploy">
 	<% if each_ploy.user && each_ploy.user.username %>
 		<h3>
-		<%= each_ploy.user.username %></br>
-		<%= each_ploy.date if each_ploy.date%></br>
+		<%= link_to each_ploy.user.username, user_path(each_ploy.user) %></br>
+		<%= each_ploy.date.strftime("%A %B %e %Y") if each_ploy.date%></br>
 		<%= each_ploy.city if each_ploy.city%>,
 		<%= each_ploy.state if each_ploy.state%>
 		<%= each_ploy.zipcode if each_ploy.zipcode%>
@@ -29,7 +37,9 @@
 			<%= act.to_s %>
 		<% end %>
 		</p>
-	<hr>
+	<!-- <hr> -->
 	<% end %>
+	</div>
 
 <% end %>
+</div>

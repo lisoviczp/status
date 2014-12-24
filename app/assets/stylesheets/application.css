@@ -30,3 +30,33 @@ h3 {
 	text-align: center;
 	text-decoration: none;
 }
+
+.ploy-container {
+	border: 1px solid gray;
+	margin:5%;
+	background-color: #e7e6dd
+}
+
+.ploy {
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	text-align: center;
+	border-radius: 7px;
+	background-color: white;
+}
+
+a {
+	text-decoration: none;
+	color: lightblue;
+}
+
+.ploy-button {
+	border: 1px solid gray;
+	border-radius: 2px;
+}
