@@ -1,0 +1,35 @@
+<h1> Showing All Ploys </h1>
+
+<hr>
+<% @ploy.map do |each_ploy| %>
+	<% if each_ploy.user && each_ploy.user.username %>
+		<h3>
+		<%= each_ploy.user.username %></br>
+		<%= each_ploy.date if each_ploy.date%></br>
+		<%= each_ploy.city if each_ploy.city%>,
+		<%= each_ploy.state if each_ploy.state%>
+		<%= each_ploy.zipcode if each_ploy.zipcode%>
+		</h3>
+
+		<p>
+		<%= each_ploy.user.username %> is with <%= each_ploy.num_of_people %> people, mostly <%= each_ploy.mostly_or_all %></br>
+		and is looking for <%= each_ploy.desired_num_of_people%> people, mostly <%= each_ploy.desired_mostly_or_all%> </br>
+		</p>
+
+		<p>
+		<%= each_ploy.user.username %> is interested in the following: </br>
+		<% each_ploy.activity.each do |act| %>
+			<%= act.to_s %>
+		<% end %>
+		</p>
+
+		<p>
+		At these types of places: </br>
+		<% each_ploy.place_type.each do |act| %>
+			<%= act.to_s %>
+		<% end %>
+		</p>
+	<hr>
+	<% end %>
+
+<% end %>

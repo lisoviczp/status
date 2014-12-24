@@ -1,0 +1,68 @@
+<div class = "my-form-container">
+    <%= simple_form_for @ploy do |f| %>
+      <h2> Create a ploy </h2>
+      <p>         
+        <div class="new-form"> 
+          <%= f.association :user, label_method: :username %>
+        </div>
+
+        <div class="new-form"> 
+          <%= f.input :date, label: "Set the date of your wave: "  %>
+        </div>
+
+        <div class="new-form"> 
+          <%= f.input :city, collection: ['New York', 'Los Angeles'], label: "Where will you be?"  %>
+       </div>
+
+        <div class="new-form"> 
+          <%= f.input :state, collection: ['NY', 'CA'] %>
+        </div>
+
+        <div class="new-form"> 
+          <%= f.input :zipcode %>
+        </div> <br><br>
+
+        <div class="new-form"> 
+          <%= f.input :city_part, label: "What part of the city?"  %>
+       </div>
+
+        <div class="new-form"> 
+          <%= f.input :num_of_people, collection: 1..20, label: "How many people will you be with?" %>
+        </div> 
+
+        <div class="new-form"> 
+          <%= f.input :mostly_or_all, collection: ['Male', 'Female', 'Mixed'], label: "Is your group mostly male or female or mixed?"  %>
+        </div> <br> <br>
+
+        <div class="new-form"> 
+          <%= f.input :desired_num_of_people, collection: 1..20, label: "How many people are you looking to meet up with?"  %>
+        </div>
+
+        <div class="new-form"> 
+          <%= f.input :desired_mostly_or_all, collection: ['Male', 'Female', 'Mixed'], label: "Are you looking for mostly male or female or mixed friends?"  %>
+        </div>
+
+        <div class="new-form"> 
+          <%= f.input :min_age, label: "Minimum age?"  %>
+        </div>
+
+        <div class="new-form"> 
+          <%= f.input :max_age, label: "Maximum age?"  %>
+        </div> <br> <br>
+
+        <div class="new-form"> 
+          <%= f.input :activity, collection: ['Party', 'Converse', 'Rage', 'Casual Drinks', 'Dance', 'Eat', 'Drink', 'Attend Event', 'Athletic Activity'], as: :check_boxes, label: "What are you looking to do?"  %>
+        </div> <br> <br>
+
+        <div class="new-form"> 
+          <%= f.input :place_type, collection: ['Danceclub', 'Bar', 'Restaurant', 'Rooftop', 'Movie', 'Theater', 'Comedy', 'Sporting Event', 'Nature', 'Other Event'], as: :check_boxes, label: "At what type of place?"  %>
+        </div> <br> <br>
+
+        <div class="new-form"> 
+          <%= f.input :preferred_place, label: "Any destination in mind? (optional)" %>
+        </div> <br> <br>
+
+        <%= f.submit class: 'btn btn-primary' %>
+      </p>
+    <% end %>
+</div>

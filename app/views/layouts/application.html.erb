@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Status</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to 'Home', root_path %>
+<%= link_to 'New User', new_user_path %>
+<%= link_to 'New Ploy', new_ploy_path %>
+<%= link_to 'New Wave', new_wafe_path %>
+
+<%= yield %>
+
+</body>
+</html>

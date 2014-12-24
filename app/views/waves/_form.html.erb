@@ -1,0 +1,12 @@
+<div class = "my-form-container">
+    <%= simple_form_for @wave do |f| %>
+      <h2> Create a Wave </h2>
+      <p>         
+        <div class="new-form"> 
+          <%= f.association :ploy %>
+        </div>
+
+        <%= f.submit class: 'btn btn-primary' %>
+      </p>
+    <% end %>
+</div>

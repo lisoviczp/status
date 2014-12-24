@@ -1,0 +1,36 @@
+
+<h1> <%= link_to @ploy.user.username, user_path(@ploy.user) %></h1>
+<h3>
+	<%= @ploy.date %></br>
+	<%= @ploy.city %>,
+	<%= @ploy.state %>
+	<%= @ploy.zipcode %>
+</h3></br>
+<p>
+You are with: <%= @ploy.num_of_people %> people, mostly <%= @ploy.mostly_or_all %></br>
+and you're looking for <%= @ploy.desired_num_of_people%> people, mostly <%= @ploy.desired_mostly_or_all%> </br>
+
+</p>
+
+<p>
+You are interested in the following: </br>
+<% @ploy.activity.each do |act| %>
+	<%= act.to_s %>
+<% end %>
+</p>
+
+<p>
+At these types of places: </br>
+<% @ploy.place_type.each do |act| %>
+	<%= act.to_s %>
+<% end %>
+</p>
+
+<p>
+<% if @ploy.preferred_place.nil? %>
+	and your preference of the night is: </br>
+	<%= @ploy.preferred_place %>
+<% end %>
+</p>
+
+

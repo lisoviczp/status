@@ -1,0 +1,20 @@
+<div class = "my-form-container">
+    <%= simple_form_for @user do |f| %>
+      <h2> Create a user </h2>
+      <p>         
+        <div class="new-form"> 
+          <%= f.input :username %>
+        </div>
+
+        <div class="new-form"> 
+          <%= f.input :first_name %>
+       </div>
+
+        <div class="new-form"> 
+          <%= f.input :last_name %>
+        </div>
+
+        <%= f.submit class: 'btn btn-primary' %>
+      </p>
+    <% end %>
+</div>

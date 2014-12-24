@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-12-22
+  num_of_people: 1
+  desired_num_of_people: 1
+  mostly_or_all: MyString
+  desired_mostly_or_all: MyString
+  min_age: 1
+  max_age: 1
+  city: MyString
+  state: MyString
+  zipcode: 1
+
+two:
+  date: 2014-12-22
+  num_of_people: 1
+  desired_num_of_people: 1
+  mostly_or_all: MyString
+  desired_mostly_or_all: MyString
+  min_age: 1
+  max_age: 1
+  city: MyString
+  state: MyString
+  zipcode: 1
