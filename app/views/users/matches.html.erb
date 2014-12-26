@@ -1,5 +1,6 @@
 <h1> Listing All Your Matches </h1>
 <h3> <%= @user.username %> </h3>
+<h3> <%= link_to 'View Your Favorites', user_favorites_path %> </h3>
 
 <div class="ploy-container">
 <% @user.get_matches(@user).map do |each_ploy| %>

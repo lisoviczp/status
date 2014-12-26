@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Status</title>
+  <title>Let's Do Stuff Together</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,10 +9,21 @@
 <body>
 
 <%= link_to 'Home', root_path %> &nbsp | &nbsp
-<%= link_to 'New User', new_user_path %> &nbsp | &nbsp
 <%= link_to 'New Ploy', new_ploy_path %> &nbsp | &nbsp
 <%= link_to 'New Wave', new_wafe_path %> 
+<div class="">
+	<% if user_signed_in? %> 
+		<%= link_to 'Edit Account', edit_user_path(current_user) %>  &nbsp | &nbsp
+		<%= link_to 'Sign Out', destroy_user_session_path, method: :delete,  :confirm => 'Are you sure?'  %> &nbsp | &nbsp
+		<%= current_user.username %> 
+	<% else %>
+	    <%= link_to 'Sign In', new_user_session_path %>
+    <% end %>
+</div>
 
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= yield %>
 
 </body>
