@@ -41,6 +41,9 @@ Rails.application.routes.draw do
   # get 'users/:id/favorites' => 'users#favorites', as: :favorite
   get 'users/:id/favorite_ploy' => 'favorites#favorite_ploy', as: :favorites
 
+  #show user favorites
+  get 'users/:id/favorites' => 'users#favorites', as: :user_favorites
+
   get 'users/:id/matches' => 'users#matches', as: 'user_matches'
   # get 'tenants/:id/find' => 'tenants#find', as: 'tenants_find'
 

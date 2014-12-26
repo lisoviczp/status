@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
     user = User.find(params[:id])
     user.favorite_ploys << ploy
     # redirect_to favorite_path(user.id)
-    redirect_to root_path
+    redirect_to user_favorites_path
   end
 
 
